@@ -1,6 +1,8 @@
 import type { Route } from "./+types/home";
-import classes from "../styles/pages/home.module.scss"
-import Hero from "~/components/hero";
+import classes from "../styles/pages/home.module.scss";
+import Hero from "~/components/home/hero";
+import Slogan from "../components/home/slogan";
+import Feature from "~/components/home/feature";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,10 +14,11 @@ export function meta({}: Route.MetaArgs) {
 const home = () => {
   return (
     <div className={classes.main}>
-      <Hero/>
+      <Hero />
+      <Slogan />
+      <Feature />
     </div>
-  )
-}
+  );
+};
 
-export default home
-
+export default home;
