@@ -71,27 +71,40 @@
 
   /* Styling untuk Accordion */
 
-
   /* CTA Button */
   .cta {
     display: none;
 
     @include mixins.apply-at-md-size {
-      display: block;
+      width: fit-content;
+      .toolbar {
+        display: flex;
+        flex-direction: row;
 
-      .act-now {
-        background-color: #fca311;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: white;
-        cursor: pointer;
-        transition: background 0.3s;
+        .toggle {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          cursor: pointer;
+          gap: 6px;
 
-        &:hover {
-          background-color: #e68900;
+          .avatar {
+            width: 1.2rem;
+            height: 1.2rem;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin-right: 0.5rem;
+          }
+
+          .lang {
+            font-family: Poppins, Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
         }
       }
+
+      display: block;
     }
   }
 
