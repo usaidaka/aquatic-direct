@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { MdExpandMore } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useMediaQuery } from "@mui/material";
 import classes from "../styles/components/navbar.module.scss";
 
 const Navbar = () => {
@@ -30,19 +30,79 @@ const Navbar = () => {
 
         {/* Newsroom: Mobile → Accordion, Desktop → Hover */}
         {isMobile ? (
-          <Accordion className={classes.accordion}>
-            <AccordionSummary
-              expandIcon={<MdExpandMore />}
-              className={classes["nav-item"]}
-            >
-              Newsroom
-            </AccordionSummary>
-            <AccordionDetails>
-              <a href="#">BLOG</a>
-              <a href="#">CUSTOMER STORIES</a>
-              <a href="#">IN THE PRESS</a>
-            </AccordionDetails>
-          </Accordion>
+        <Accordion
+        sx={{
+          width: "100%",
+          background: "none",
+          color: "white",
+          boxShadow: "none",
+   
+        }}
+      >
+        <AccordionSummary
+          expandIcon={<MdExpandMore style={{ color: "orange" }} />}
+          
+          sx={{
+            fontSize: "16px",
+            width: "100%",
+            display: "flex",
+            // margin: "0px",
+            alignItems: "center",
+            fontStyle: "normal",
+            // marginBottom:"10px",
+            "&.Mui-expanded": {
+              minHeight: "0px !important",
+              "> span": {
+                // height:"10px",
+              margin:"12px 0 12px",
+              padding: "0", // Adjust padding
+            },
+            }
+           }}
+            
+        >
+          Newsroom
+        </AccordionSummary>
+        <AccordionDetails
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            paddingLeft:"30px"
+          }}
+        >
+          <a
+            href="#"
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "14px",
+            }}
+          >
+            BLOG
+          </a>
+          <a
+            href="#"
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "14px",
+            }}
+          >
+            CUSTOMER STORIES
+          </a>
+          <a
+            href="#"
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "14px",
+            }}
+          >
+            IN THE PRESS
+          </a>
+        </AccordionDetails>
+      </Accordion>
         ) : (
           <li className={classes.dropdown}>
             <a href="#" className={classes["nav-item"]}>

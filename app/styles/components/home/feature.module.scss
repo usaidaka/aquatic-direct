@@ -23,9 +23,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    border: 2px solid white;
 
     @include mixins.apply-at-xl-size {
       flex-direction: row;
@@ -37,11 +36,12 @@
     }
 
     .image {
-      height: 70%;
+      height: fit-content;
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: center;
+      padding: 0px 16px;
 
       @include mixins.apply-at-xl-size {
         height: 100%;
@@ -54,7 +54,6 @@
       h1 {
         height: 250px;
         width: 350px;
-        border: 2px solid white;
         @include mixins.apply-at-xl-size {
           height: 400px;
           width: 600px;
@@ -63,14 +62,38 @@
     }
 
     .description {
+      padding: 20px;
       @include mixins.apply-at-xl-size {
         height: 100%;
-        border: 2px solid white;
         width: 50%;
         display: flex;
-        justify-content: start;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        h1 {
+          font-size: 50px;
+        }
+
+        h3{
+          font-size: 20px;
+        }
       }
     }
   }
+}
+
+.first-feature {
+  .image {
+    img {
+      width: 80%;   
+      @include mixins.apply-at-xl-size {
+        width: 50%;   
+      }
+     }
+  }
+}
+
+.second-feature {
+  background: linear-gradient(to top, #0d1b2a, rgba(0, 0, 0, 0)),
 }
